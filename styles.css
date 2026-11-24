@@ -21,8 +21,3 @@ p {
     text-decoration: none; /* Removes underlines */
     padding: 14px 20px;
   }
-
-  /* Change background color when hovering */
-.navbar a:hover {
-    background-color: #555;
-  }
