@@ -1,15 +1,21 @@
 #header{
     color: red;
+    margin-left: auto;
+    margin-right:auto;
+    size: 30pt;
 }
 #navbar {
-  display: flex; 
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    size: 20pt;
 }
 #content{
     color: aqua;
 }
 #navigator{
     list-style-type: none;
-    padding: 0;
+    padding: 15;
     margin: 0;
     display: flex;
 }
