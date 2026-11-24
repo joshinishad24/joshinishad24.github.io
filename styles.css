@@ -1,7 +1,28 @@
 p {
   color: red;
 }
-nav{
-    background-color: aqua;
-    color: whitesmoke
-}
+  /* Style the navigation bar container */
+.navbar {
+    background-color: #333;
+  }
+
+  /* Arrange list items horizontally using Flexbox */
+.navbar ul {
+    list-style-type: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Lines items up side-by-side */
+  }
+
+  /* Style the individual links */
+.navbar a {
+    display: block; /* Makes the entire padded area clickable */
+    color: white;
+    text-decoration: none; /* Removes underlines */
+    padding: 14px 20px;
+  }
+
+  /* Change background color when hovering */
+.navbar a:hover {
+    background-color: #555;
+  }
