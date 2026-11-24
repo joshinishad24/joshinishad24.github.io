@@ -7,3 +7,9 @@
 #content{
     color: aqua;
 }
+.navigator{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
