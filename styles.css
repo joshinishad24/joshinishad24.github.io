@@ -1,21 +1,20 @@
-#header{
-    color: red;
-    margin-left: auto;
-    margin-right:auto;
-    size: 30pt;
+#header {
+  color: red;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 12px;
 }
-#navbar {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    size: 20pt;
+
+#navigator {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centers the flex items horizontally */
+  gap: 24px;               /* Adds clean spacing between Home, Projects, Resume */
+  font-size: 20px;
 }
-#content{
-    color: aqua;
-}
-#navigator{
-    list-style-type: none;
-    padding: 15;
-    margin: 0;
-    display: flex;
+
+#content {
+  color: aqua;
 }
