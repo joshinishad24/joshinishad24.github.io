@@ -18,12 +18,20 @@
         <li><a href="resume.html">Resume</a></li>
       </ul>
     </nav>
-
-    <div id = "projCard">
-      <h3>SpaceLex Rocketry Active Airbrakes</h3>
-      <p>Novel airbraking mechanism for a 10,000 foot IREC competition rocket. Designed using Autodesk Inventor, simulated using Ansys Fluent</p>
-      <img class = "card-image" src="assets/airbrakes_velocity_plot.png", alt="Airbrakes Velocity Plot" width="400" height="300">
-    </div>
-    <main id="content">Content</main>
+    <section class="projects-container">
+      <article class="project-card">
+        <div class="card-text">
+          <h2>SpaceLex Active Airbrakes</h2>
+          <p>Designed active airbrakes in Autodesk Inventor targeting a 28% drag
+            increase, paired with a Mach 0.1-0.8 Ansys Fluent CFD workflow and
+            ESP32 PID controller.
+          </p>
+          <a href="projects.html" class="card-link">View Project &rarr;</a>
+        </div>
+        <div class="card-image">
+          <img src="assets/airbrakes_velocity_plot.png" alt="SpaceLex active airbrake CFD Velocity plot" />
+        </div>
+      </article>
+    </section>
   </body>
 </html>
