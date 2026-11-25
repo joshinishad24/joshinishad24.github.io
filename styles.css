@@ -1,9 +1,29 @@
 #header {
-  color: red;
   font-size: 36px;
   text-align: center;
   margin-bottom: 12px;
-  font-family: 'cambria math', 'cambria', 'times new roman', serif;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+:root {
+  --bg-main: #0d1117;      /* Deep slate background */
+  --bg-card: #161b22;      /* Slightly lighter shade for cards/nav */
+  --text-main: #e6edf3;    /* Soft off-white for body text */
+  --text-muted: #8b949e;   /* Gray for subtitles and dates */
+  --accent: #58a6ff;       /* Accent color for links and buttons */
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;               /* Removes default white border around the page */
+  min-height: 100vh;       /* Ensures background fills the full screen height */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+a {
+  color: var(--accent);    /* Prevents default dark-blue links from disappearing */
+  text-decoration: none;
 }
 
 #navigator {
