@@ -8,7 +8,7 @@
 #subheader2{
   text-align: center;
   font-size: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   font-family: system-ui, -apple-system, sans-serif;
   font-weight: normal
 }
@@ -124,4 +124,63 @@ a {
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  position: absolute;
+  top: 100%;               /* Sits right below "Projects" */
+  left: 50%;
+  transform: translateX(-50%) translateY(6px); /* Centers under "Projects" */
+  min-width: 220px;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+  z-index: 100;            /* Floats cleanly on top of your project cards */
+
+  /* Hidden by default with a smooth fade */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+/* Invisible hover bridge so the menu doesn't close as your mouse moves down */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 12px;
+}
+
+/* Show on hover (or keyboard tab focus) */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(10px);
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--accent);
 }
