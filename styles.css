@@ -120,6 +120,7 @@ a {
 
 #projCard {
   background-color: var(--bg-card);
+  grid-template-columns: 3fr 7fr; /* 30% text left, 70% image right */
   padding: 16px;
   border-radius: 8px;
   margin-bottom: 16px;
