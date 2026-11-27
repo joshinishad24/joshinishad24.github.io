@@ -206,14 +206,152 @@ a {
   transform: rotate(180deg);
 }
 
-#projectHeader{
-  font-size: 20pt;
-  color: var(--text-main);
-  text-align: center;
+/* =========================================================
+   PROJECT DETAIL PAGES (spacelex.html, rocksat.html, uav.html)
+   ========================================================= */
+
+/* Main column: slightly narrower than homepage cards (960px vs 1100px)
+   so technical paragraphs stay easy to read */
+.project-page {
+  max-width: 960px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
 }
 
-#projectBody{
+.back-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.project-hero h1 {
+  margin: 0 0 12px;
+  font-size: 2.2rem;
+}
+
+.project-lead {
+  margin: 0 0 28px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Spec Strip: 4-column dark card using the same surface styling as homepage cards */
+.spec-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.spec-value {
+  font-size: 0.95rem;
   color: var(--text-main);
-  text-align: center;
-  font-size: 15pt;
+  line-height: 1.4;
+}
+
+/* Reusable figure frame: prevents plots/CAD from ever getting cropped */
+.figure-box {
+  margin: 0 0 40px;
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.figure-box img {
+  width: 100%;
+  height: auto;     /* Preserves full aspect ratio so legends/axes stay intact */
+  display: block;
+}
+
+.figure-box figcaption {
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Standard content sections */
+.project-section {
+  margin-bottom: 52px;
+}
+
+.project-section h2 {
+  margin: 0 0 14px;
+  font-size: 1.45rem;
+  color: var(--text-main);
+}
+
+.project-section p {
+  margin: 0 0 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.detail-list {
+  padding-left: 20px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.detail-list strong {
+  color: var(--text-main);
+}
+
+/* Two-column split for side-by-side text + visuals */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.two-col .figure-box {
+  margin-bottom: 0; /* Removes extra bottom margin when inside a grid row */
+}
+
+/* Bottom Next/Back navigation bar */
+.project-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+}
+
+/* Responsive behavior for tablets and phones */
+@media (max-width: 768px) {
+  .spec-strip {
+    grid-template-columns: repeat(2, 1fr); /* Drops 4 columns -> 2x2 grid */
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;            /* Stacks text and images vertically */
+  }
 }

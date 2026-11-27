@@ -3,28 +3,141 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test page!</title>
+    <title>SpaceLex Active Airbrakes</title>
     <link href="styles.css" rel="stylesheet" />
   </head>
-  <body>
-    <header id="header">Projects</header>
 
+  <body>
+    <!-- =========================================================
+         REUSED HEADER & NAVBAR (Identical to index.html)
+         Keeps navigation consistent across every page on the site.
+         ========================================================= -->
+    <header id="header">Nishad Joshi</header>
     <nav id="navbar">
       <ul id="navigator">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="dropdown">
-          <a href="#projects">Projects <span class="arrow">&#9662;</span></a>
+          <a href="index.html#projects">Projects <span class="arrow">&#9662;</span></a>
           <ul class="dropdown-menu">
             <li><a href="spacelex.html">SpaceLex Active Airbrakes</a></li>
-            <li><a href="rocksat.html">L1 Certification Rocket</a></li>
+            <li><a href="rocksat.html">RockSat Mechanical</a></li>
             <li><a href="uav.html">UAV Parachute Drop</a></li>
           </ul>
         </li>
-        <li><a href="assets/Professional Resume v2 November 2026.pdf" target="_blank">Resume</a></li>
+        <li><a href="assets/Nishad_Joshi_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </ul>
     </nav>
 
-    <main id="content">Content</main>
+    <!-- =========================================================
+         MAIN PROJECT CONTAINER
+         .project-page centers the content at a readable width (960px)
+         so text lines never stretch uncomfortably wide on large monitors.
+         ========================================================= -->
+    <main class="project-page">
+
+      <!-- 1. PROJECT HERO: Title + 1-line summary + Spec Strip -->
+      <section class="project-hero">
+        <a href="index.html" class="back-link">&larr; Back to All Projects</a>
+        <h1>L1 Certification Rocket</h1>
+        <p class="project-lead">
+          Independently designed and scratch built rocket to achieve Level 1 (L1) High-Power Rocketry certification. 
+        </p>
+
+        <!-- SPEC STRIP: Uses CSS Grid (4 equal columns) styled with --bg-card -->
+        <div class="spec-strip">
+          <div class="spec-item">
+            <span class="spec-label">Role</span>
+            <span class="spec-value">Independent Rocket Construction</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Timeline</span>
+            <span class="spec-value">Jul 2026 &ndash; Sep 2026</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Objectives overview</span>
+            <span class="spec-value">Achieve high-power rocketry certification</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Skills used/gained</span>
+            <span class="spec-value">OpenRocket, OnShape, Hardware Manufacturing (Laser Cutter, 3D printer)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. HERO VISUAL: Full-width showcase figure with caption -->
+      <figure class="figure-box">
+        <img src="assets/l1_openrocket.png" alt="OpenRocket render of the rocket design" />
+        <figcaption>
+          Openrocket design page showing key characteristics of the rocket such as apogee, maximum velocity/acceleration, and stability margins
+        </figcaption>
+      </figure>
+
+      <!-- 3. SECTION 1: Objective & Constraints (Single-column text) -->
+      <section class="project-section">
+        <h2>1. Objective and Requirements</h2>
+        <p>
+          The main objective of the project was to obtain a certification to fly high-power rockets. Besides being a personal passion of mine, 
+          this certification would assist in test launching any experimental work I decide to do in the future, since it is a clear metric of my ability 
+          to design safe rockets
+        </p>
+        <ul class="detail-list">
+          <li><strong>Targeted stability</strong> Achieve 1.5 cal stability to ensure a smooth flight</li>
+          <li><strong>Safe recovery</strong> Ensure a safe return of the rocket in fully flyable condition</li>
+        </ul>
+      </section>
+
+      <!-- 4. SECTION 2: Two-Column Split (Text Left, CAD/Plot Right)
+           .two-col pairs concise explanation directly beside its supporting image. -->
+      <section class="project-section two-col">
+        <div class="col-text">
+          <h2>2. Mechanical Design and CFD Workflow</h2>
+          <p>
+            The airbrake assembly was modeled in Autodesk Inventor to deploy symmetrically
+            into the freestream perpendicular to the rocket body. To quantify the effectiveness of the airbrakes, 
+            I designed and established a team-standard Ansys Fluent CFD workflow spanning
+            Mach 0.1&ndash;0.8 across four deployment angles.
+          </p>
+          <p>
+            The resulting drag coefficient (C<sub>D</sub>) lookup tables will feed directly into our 
+            prediction and control algorithm
+          </p>
+        </div>
+
+        <figure class="figure-box">
+          <img src="assets/airbrake-cad.png" alt="Autodesk Inventor CAD render of active airbrake assembly" />
+          <figcaption>Autodesk Inventor assembly of the active airbrake actuation mechanism.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 5. SECTION 3: Controls & Validation (Reversed Two-Column: Image Left, Text Right)
+           Adding .reverse swaps the visual rhythm so the page doesn't feel repetitive. -->
+      <section class="project-section two-col reverse">
+        <figure class="figure-box">
+          <img src="assets/esp32-controls.png" alt="Simulink PID control architecture and ESP32 avionics" />
+          <figcaption>Simulink PID architecture deployed in C++ onto an ESP32 with IMU/barometer telemetry.</figcaption>
+        </figure>
+
+        <div class="col-text">
+          <h2>3. Control Design and Validation</h2>
+          <p>
+            Using Simulink and C++, we developed a real-time PID control loop running on an ESP32
+            microcontroller. The controller fuses live IMU and barometer telemetry to estimate
+            projected apogee and command airbrake deployment angles throughout the coast phase.
+          </p>
+          <p>
+            Subscale prototype launches are used to validate sensor filtering, mechanical reliability,
+            and real-world drag performance against CFD predictions.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. BOTTOM NAVIGATION: Guides recruiters directly to your next project -->
+      <nav class="project-footer-nav">
+        <a href="index.html">&larr; All Projects</a>
+        <a href="l1.html">Next: L1 Certification &rarr;</a>
+      </nav>
+
+    </main>
   </body>
 </html>

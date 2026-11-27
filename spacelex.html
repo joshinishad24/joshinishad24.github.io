@@ -3,35 +3,143 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test page!</title>
+    <title>SpaceLex Active Airbrakes</title>
     <link href="styles.css" rel="stylesheet" />
   </head>
-  <body>
-    <header id="header">SpaceLex Rocketry Airbrakes</header>
 
+  <body>
+    <!-- =========================================================
+         REUSED HEADER & NAVBAR (Identical to index.html)
+         Keeps navigation consistent across every page on the site.
+         ========================================================= -->
+    <header id="header">Nishad Joshi</header>
     <nav id="navbar">
       <ul id="navigator">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li class="dropdown">
-          <a href="#projects">Projects <span class="arrow">&#9662;</span></a>
+          <a href="index.html#projects">Projects <span class="arrow">&#9662;</span></a>
           <ul class="dropdown-menu">
             <li><a href="spacelex.html">SpaceLex Active Airbrakes</a></li>
             <li><a href="rocksat.html">RockSat Mechanical</a></li>
             <li><a href="uav.html">UAV Parachute Drop</a></li>
           </ul>
         </li>
-        <li><a href="assets/Professional Resume v2 November 2026.pdf" target="_blank">Resume</a></li>
+        <li><a href="assets/Nishad_Joshi_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </ul>
     </nav>
 
-    <div>
-      <p id = "projectHeader">Project Overview</p>
-      <p id = "projectBody">The goal of this project is to design and implement a novel airbrake system for our competition rocket
-        This idea was pitched during my first meeting with SpaceLex and I saw it as an opportunity to grow my engineering and leadership skills
-        so I signed on to co-found this subteam with another member. Over the course of one and a half years working with this project, I've been able to
-        grow as an engineer and as a leader, since I was elected to be the lead of the subsection where I manage a team of 5
-      </p>
-    </div>
+    <!-- =========================================================
+         MAIN PROJECT CONTAINER
+         .project-page centers the content at a readable width (960px)
+         so text lines never stretch uncomfortably wide on large monitors.
+         ========================================================= -->
+    <main class="project-page">
+
+      <!-- 1. PROJECT HERO: Title + 1-line summary + Spec Strip -->
+      <section class="project-hero">
+        <a href="index.html" class="back-link">&larr; Back to All Projects</a>
+        <h1>SpaceLex Active Airbrakes</h1>
+        <p class="project-lead">
+          Active aerodynamic braking system designed to hold a 10,000 ft IREC competition
+          rocket on target apogee through real-time ESP32 control and prior simulation data
+        </p>
+
+        <!-- SPEC STRIP: Uses CSS Grid (4 equal columns) styled with --bg-card -->
+        <div class="spec-strip">
+          <div class="spec-item">
+            <span class="spec-label">Role</span>
+            <span class="spec-value">Apogee Control Lead (5-Member Team)</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Timeline</span>
+            <span class="spec-value">Aug 2025 &ndash; Present</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Objectives overview</span>
+            <span class="spec-value">+28% Drag | &le; 4 lb Mass Budget</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Skills used/gained</span>
+            <span class="spec-value">Autodesk Inventor, Ansys Fluent, Simulink, C++, ESP32</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. HERO VISUAL: Full-width showcase figure with caption -->
+      <figure class="figure-box">
+        <img src="assets/airbrakes_velocity_plot.png" alt="Ansys Fluent velocity contour across deployed airbrakes" />
+        <figcaption>
+          Ansys Fluent velocity contour plot showing oblique shocks due to the airbrakes, and the velocity field output of the simulation
+        </figcaption>
+      </figure>
+
+      <!-- 3. SECTION 1: Objective & Constraints (Single-column text) -->
+      <section class="project-section">
+        <h2>1. Objective and Requirements</h2>
+        <p>
+          The main objective of the airbrakes system is to address a common problem with high power rocket motors, 
+          being motor tolerance. Due to the variance of appoximately &plusmn;10%, an apogee control system is necessary
+          to target the specific 10,000ft apogee for maximum points scored. 
+        </p>
+        <ul class="detail-list">
+          <li><strong>Drag Addition:</strong> Achieving up to a 28% increase in overall rocket drag at full deployment</li>
+          <li><strong>Physical Constraints:</strong> Fit within a 4 lb subsystem weight allowance inside the rocket</li>
+          <li><strong>Real-Time Control:</strong> Predict apogee in real time to command specific drag increases post-burnout</li>
+        </ul>
+      </section>
+
+      <!-- 4. SECTION 2: Two-Column Split (Text Left, CAD/Plot Right)
+           .two-col pairs concise explanation directly beside its supporting image. -->
+      <section class="project-section two-col">
+        <div class="col-text">
+          <h2>2. Mechanical Design and CFD Workflow</h2>
+          <p>
+            The airbrake assembly was modeled in Autodesk Inventor to deploy symmetrically
+            into the freestream perpendicular to the rocket body. To quantify the effectiveness of the airbrakes, 
+            I designed and established a team-standard Ansys Fluent CFD workflow spanning
+            Mach 0.1&ndash;0.8 across four deployment angles.
+          </p>
+          <p>
+            The resulting drag coefficient (C<sub>D</sub>) lookup tables will feed directly into our 
+            prediction and control algorithm
+          </p>
+        </div>
+
+        <figure class="figure-box">
+          <img src="assets/airbrake-cad.png" alt="Autodesk Inventor CAD render of active airbrake assembly" />
+          <figcaption>Autodesk Inventor assembly of the active airbrake actuation mechanism.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 5. SECTION 3: Controls & Validation (Reversed Two-Column: Image Left, Text Right)
+           Adding .reverse swaps the visual rhythm so the page doesn't feel repetitive. -->
+      <section class="project-section two-col reverse">
+        <figure class="figure-box">
+          <img src="assets/esp32-controls.png" alt="Simulink PID control architecture and ESP32 avionics" />
+          <figcaption>Simulink PID architecture deployed in C++ onto an ESP32 with IMU/barometer telemetry.</figcaption>
+        </figure>
+
+        <div class="col-text">
+          <h2>3. Control Design and Validation</h2>
+          <p>
+            Using Simulink and C++, we developed a real-time PID control loop running on an ESP32
+            microcontroller. The controller fuses live IMU and barometer telemetry to estimate
+            projected apogee and command airbrake deployment angles throughout the coast phase.
+          </p>
+          <p>
+            Subscale prototype launches are used to validate sensor filtering, mechanical reliability,
+            and real-world drag performance against CFD predictions.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. BOTTOM NAVIGATION: Guides recruiters directly to your next project -->
+      <nav class="project-footer-nav">
+        <a href="index.html">&larr; All Projects</a>
+        <a href="l1.html">Next: L1 Certification &rarr;</a>
+      </nav>
+
+    </main>
   </body>
 </html>
