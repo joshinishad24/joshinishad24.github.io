@@ -122,10 +122,6 @@ a {
   font-size: 20px;
 }
 
-#content {
-  color: aqua;
-}
-
 #projCard {
   background-color: var(--bg-card);
   grid-template-columns: 3fr 7fr; /* 30% text left, 70% image right */
@@ -208,4 +204,16 @@ a {
 .dropdown:hover .arrow,
 .dropdown:focus-within .arrow {
   transform: rotate(180deg);
+}
+
+.projectHeader{
+  font-size: 20pt;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.projectBody{
+  color: var(--text-main);
+  text-align: center;
+  font-size: 15pt;
 }
