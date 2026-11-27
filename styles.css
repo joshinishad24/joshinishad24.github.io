@@ -206,13 +206,13 @@ a {
   transform: rotate(180deg);
 }
 
-.projectHeader{
+#projectHeader{
   font-size: 20pt;
   color: var(--text-main);
   text-align: center;
 }
 
-.projectBody{
+#projectBody{
   color: var(--text-main);
   text-align: center;
   font-size: 15pt;
