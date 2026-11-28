@@ -67,7 +67,7 @@
 
       <!-- 2. HERO VISUAL: Full-width showcase figure with caption -->
       <figure class="figure-box">
-        <img src="assets/l1_openrocket.png" alt="OpenRocket render of the rocket design" />
+        <img src="assets/l1_openrocket_data.png" alt="OpenRocket render of the rocket design" />
         <figcaption>
           Openrocket design page showing key characteristics of the rocket such as apogee, maximum velocity/acceleration, and stability margins
         </figcaption>
@@ -78,56 +78,46 @@
         <h2>1. Objective and Requirements</h2>
         <p>
           The main objective of the project was to obtain a certification to fly high-power rockets. Besides being a personal passion of mine, 
-          this certification would assist in test launching any experimental work I decide to do in the future, since it is a clear metric of my ability 
-          to design safe rockets
+          this certification would serve as a universal indicator of my ability to design safe rockets. This will allow me to pursue
+          other experimental rocketry projects, such as active airbraking control with SpaceLex.
         </p>
         <ul class="detail-list">
-          <li><strong>Targeted stability</strong> Achieve 1.5 cal stability to ensure a smooth flight</li>
-          <li><strong>Safe recovery</strong> Ensure a safe return of the rocket in fully flyable condition</li>
+          <li><strong>Targeted stability:</strong> Achieve a minimum 1.5 cal stability to ensure a smooth flight</li>
+          <li><strong>Safe recovery:</strong> Ensure a safe return of the rocket in fully flyable condition</li>
         </ul>
       </section>
 
-      <!-- 4. SECTION 2: Two-Column Split (Text Left, CAD/Plot Right)
-           .two-col pairs concise explanation directly beside its supporting image. -->
+      <!--2 columns text left-->
       <section class="project-section two-col">
         <div class="col-text">
-          <h2>2. Mechanical Design and CFD Workflow</h2>
+          <h2>2. Mechanical Design and Construction</h2>
           <p>
-            The airbrake assembly was modeled in Autodesk Inventor to deploy symmetrically
-            into the freestream perpendicular to the rocket body. To quantify the effectiveness of the airbrakes, 
-            I designed and established a team-standard Ansys Fluent CFD workflow spanning
-            Mach 0.1&ndash;0.8 across four deployment angles.
-          </p>
-          <p>
-            The resulting drag coefficient (C<sub>D</sub>) lookup tables will feed directly into our 
-            prediction and control algorithm
+            The entire rocket was modeled in an OnShape document shared across the workspace to be a potential template 
+            for other members developing their L1 rockets. The design process involved using the team laser cutter and 3d printer
+            to fabricate custom parts based on the OpenRocket design. Additionally, the motor was retained using a custom cap and screw
+            assembly.
           </p>
         </div>
 
         <figure class="figure-box">
-          <img src="assets/airbrake-cad.png" alt="Autodesk Inventor CAD render of active airbrake assembly" />
-          <figcaption>Autodesk Inventor assembly of the active airbrake actuation mechanism.</figcaption>
+          <img src="assets/L1_section_view.png" alt="Onshape Section view of the L1 rocket" />
+          <figcaption>OnShape section view of the full rocket CAD assembly</figcaption>
         </figure>
       </section>
 
-      <!-- 5. SECTION 3: Controls & Validation (Reversed Two-Column: Image Left, Text Right)
-           Adding .reverse swaps the visual rhythm so the page doesn't feel repetitive. -->
+      <!--2 columns text right-->
       <section class="project-section two-col reverse">
         <figure class="figure-box">
-          <img src="assets/esp32-controls.png" alt="Simulink PID control architecture and ESP32 avionics" />
-          <figcaption>Simulink PID architecture deployed in C++ onto an ESP32 with IMU/barometer telemetry.</figcaption>
+          <img src="assets/l1_launch_day.jpg" alt="An image of a rocket on its side in a field with a parachute deployed" />
+          <figcaption>An image of the scratch-built rocket in the field post-launch, with the recovery parachute deployed</figcaption>
         </figure>
 
         <div class="col-text">
-          <h2>3. Control Design and Validation</h2>
+          <h2>3. Certification flight</h2>
           <p>
-            Using Simulink and C++, we developed a real-time PID control loop running on an ESP32
-            microcontroller. The controller fuses live IMU and barometer telemetry to estimate
-            projected apogee and command airbrake deployment angles throughout the coast phase.
-          </p>
-          <p>
-            Subscale prototype launches are used to validate sensor filtering, mechanical reliability,
-            and real-world drag performance against CFD predictions.
+            To fully obtain certification, the rocket was brought to a rocketry launch event, where it had to pass 3 separate inspections of build quality and
+            stability/apogee metrics. After passing each inspection perfectly, the rocket was flown on an H100 motor to an apogee of 1,100 feet AGL. The rocket was then 
+            certified again as flyable and the certification was awarded
           </p>
         </div>
       </section>
@@ -135,7 +125,7 @@
       <!-- 6. BOTTOM NAVIGATION: Guides recruiters directly to your next project -->
       <nav class="project-footer-nav">
         <a href="index.html">&larr; All Projects</a>
-        <a href="l1.html">Next: L1 Certification &rarr;</a>
+        <a href="l1.html">Next: Rocksat Mechanical &rarr;</a>
       </nav>
 
     </main>

@@ -36,7 +36,6 @@
          ========================================================= -->
     <main class="project-page">
 
-      <!-- 1. PROJECT HERO: Title + 1-line summary + Spec Strip -->
       <section class="project-hero">
         <a href="index.html" class="back-link">&larr; Back to All Projects</a>
         <h1>SpaceLex Active Airbrakes</h1>
@@ -45,7 +44,7 @@
           rocket on target apogee through real-time ESP32 control and prior simulation data
         </p>
 
-        <!-- SPEC STRIP: Uses CSS Grid (4 equal columns) styled with --bg-card -->
+
         <div class="spec-strip">
           <div class="spec-item">
             <span class="spec-label">Role</span>
@@ -66,7 +65,7 @@
         </div>
       </section>
 
-      <!-- 2. HERO VISUAL: Full-width showcase figure with caption -->
+
       <figure class="figure-box">
         <img src="assets/airbrakes_velocity_plot.png" alt="Ansys Fluent velocity contour across deployed airbrakes" />
         <figcaption>
@@ -80,7 +79,8 @@
         <p>
           The main objective of the airbrakes system is to address a common problem with high power rocket motors, 
           being motor tolerance. Due to the variance of appoximately &plusmn;10%, an apogee control system is necessary
-          to target the specific 10,000ft apogee for maximum points scored. 
+          to target the specific 10,000ft apogee for maximum points scored. This is done by actuating control surfaces during the coasting
+          phase which will use an increase in drag to reduce our velocity and achieve a specific apogee
         </p>
         <ul class="detail-list">
           <li><strong>Drag Addition:</strong> Achieving up to a 28% increase in overall rocket drag at full deployment</li>
@@ -89,8 +89,7 @@
         </ul>
       </section>
 
-      <!-- 4. SECTION 2: Two-Column Split (Text Left, CAD/Plot Right)
-           .two-col pairs concise explanation directly beside its supporting image. -->
+
       <section class="project-section two-col">
         <div class="col-text">
           <h2>2. Mechanical Design and CFD Workflow</h2>
@@ -101,7 +100,7 @@
             Mach 0.1&ndash;0.8 across four deployment angles.
           </p>
           <p>
-            The resulting drag coefficient (C<sub>D</sub>) lookup tables will feed directly into our 
+            The resulting drag coefficient lookup tables will feed directly into our 
             prediction and control algorithm
           </p>
         </div>
@@ -112,8 +111,6 @@
         </figure>
       </section>
 
-      <!-- 5. SECTION 3: Controls & Validation (Reversed Two-Column: Image Left, Text Right)
-           Adding .reverse swaps the visual rhythm so the page doesn't feel repetitive. -->
       <section class="project-section two-col reverse">
         <figure class="figure-box">
           <img src="assets/esp32-controls.png" alt="Simulink PID control architecture and ESP32 avionics" />
